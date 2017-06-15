@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from "./header"
-import Footer from "./Footer"
+import TodoInput from './TodoInput';
+import Todolist from './Todolist';
 
 class App extends Component {
   constructor(props){
