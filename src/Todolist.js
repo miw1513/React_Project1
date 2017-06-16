@@ -5,10 +5,15 @@ import Todoitem from './Todoitem'
 
 class Todolist extends Component {
     render(){
+        let {items} = this.props
         return(
      <div>
-        
-        <Todoitem/>
+        <ul>
+            
+         { 
+           items.map((todo,i) => <li key={i}><Todoitem item={todo}/></li>)
+         }
+         </ul>
         </div>
 
         
