@@ -5,7 +5,7 @@ import Todolist from './Todolist';
 class App extends Component {
   constructor(props){
     super(props)
-   
+    
   }
 
 
@@ -14,7 +14,8 @@ class App extends Component {
     return (
       
       <div>
-      
+        <Todolist/>
+        <TodoInput/>
       </div>
     );
   }

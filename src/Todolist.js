@@ -1,4 +1,4 @@
-import React, {Component} from 'React'
+import React, {Component} from 'react';
 import Todoitem from './Todoitem'
 
 
@@ -6,10 +6,16 @@ import Todoitem from './Todoitem'
 class Todolist extends Component {
     render(){
         return(
+     <div>
+        
+        <Todoitem/>
+        </div>
+
+        
 
         )
     }
 }
 
 
-export default Todoitem
+export default Todolist
