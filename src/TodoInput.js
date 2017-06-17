@@ -24,14 +24,14 @@ class TodoInput extends Component {
         }
   
     }    
-      handleClick(){
+      handleClick(event){
 
         let {onAddTodo} = this.props
         onAddTodo(this.state.text1)
         this.setState({
             text1: ""
         })
-
+        event.preventDefault();
       
 
     }
@@ -39,12 +39,13 @@ class TodoInput extends Component {
     render(){
         
         return(
+            <form onSubmit={this.handleClick}>
             <div>
-                <input type="text" value={this.state.text1} onChange={this.handleChange} />
-                <button onClick={this.handleClick}>Add</button>
+                <input type="text" value={this.state.text1} onChange={this.handleChange} required/>
+                <input type="submit" value="Add" />
               
                 </div>
-
+                </form>
 
         )
     }
