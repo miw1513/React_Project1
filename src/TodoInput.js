@@ -7,23 +7,30 @@ class TodoInput extends Component {
         super(props)
         this.state= {
             text1: "",
-            check: ""
+            check: "",
+            text2: ""
 
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleChange1 = this.handleChange1.bind(this)
     }
     handleChange(event){
-        let text1 = this.state.text1
-        this.setState({text1: event.target.value})
-          if (text1[1] === 'a'){
-            this.setState({check: 'ดีเยี่ยม'}); 
-         }
-        else {
-             this.setState({check: ''}); 
-        }
+       
+       
+        this.setState({
+            text1: event.target.value
+        
+    })
+         
   
     }    
+    handleChange1(event){
+     
+         this.setState({
+            text2: event.target.value   
+            })
+    }
       handleClick(event){
 
         let {onAddTodo} = this.props
@@ -39,9 +46,16 @@ class TodoInput extends Component {
     render(){
         
         return(
+
             <form onSubmit={this.handleClick}>
             <div>
+                <h2>Hi My name is {this.state.text2} </h2><br/>
+                 <select onChange={this.handleChange1}>
+                    <option value="student">Student </option>
+                    <option value="teacher">Teacher </option>
+                    </select> <br/>
                 <input type="text" value={this.state.text1} onChange={this.handleChange} required/>
+               
                 <input type="submit" value="Add" />
               
                 </div>

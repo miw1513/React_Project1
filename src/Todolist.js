@@ -8,8 +8,7 @@ class Todolist extends Component {
         let {items} = this.props
         return(
      <div>
-        <ul>
-            
+        <ul>         
          { 
            items.map((todo,i) => <li key={i}><Todoitem item={todo}/></li>)
          }
