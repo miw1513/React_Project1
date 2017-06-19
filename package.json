@@ -1,10 +1,12 @@
 {
-  "name": "test1",
+  "name": "test2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
@@ -14,5 +16,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miw1513/React_Project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miw1513/React_Project1/issues"
+  },
+  "homepage": "https://github.com/miw1513/React_Project1#readme"
 }
