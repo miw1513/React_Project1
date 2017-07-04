@@ -7,20 +7,33 @@ import Signup from './Component/Signup'
 import {createStore} from 'redux';
 
 
+const initialState = {
+    result:15000,
+    value:[]
+}
 
-const reducer = (state,action) => {
+
+const reducer = (state=initialState,action) => {
     switch (action.type) {
         case 'ADD':
-            state+= action.payload;
+                state = {
+                   result: state.result+=action.payload,
+                   value: [...state.value,action.payload]
+                }
+                console.log(...state.value,action.payload)
             break;
         case 'SUBTRACT' :
-            state-= action.payload;
+                state = {
+                    result: state.result-=action.payload,
+                    value:[...state.value,action.payload]
+                }
+                console.log(...state.value)
             break;
         
     }
     return state;
 }
-const store = createStore(reducer,15000);
+const store = createStore(reducer);
     store.subscribe(()=>{
         console.log('Update Result : ',store.getState())
     })
@@ -30,8 +43,9 @@ const store = createStore(reducer,15000);
     })
     store.dispatch({
         type:'SUBTRACT',
-        payload:15000
+        payload:5000
     })
+ 
 
 class App extends Component {
 
