@@ -4,16 +4,21 @@ import Home from './Component/Home'
 //import Input from './Component/Input'
 import Login from './Component/Login'
 import Signup from './Component/Signup'
-import {createStore} from 'redux';
+import {createStore,combineReducers} from 'redux';
 
 
-const initialState = {
+const initialStateEmployee = {
     result:15000,
     value:[]
 }
 
+const initialStateUser = {
+    name : "Kong",
+    age :15
+}
 
-const reducer = (state=initialState,action) => {
+
+const EmployeeReducer = (state=initialStateEmployee,action) => {
     switch (action.type) {
         case 'ADD':
                 state = {
@@ -33,7 +38,29 @@ const reducer = (state=initialState,action) => {
     }
     return state;
 }
-const store = createStore(reducer);
+
+const UserReducer = (state=initialStateUser,action) => {
+    switch (action.type) {
+       case 'setName' :
+            state = {
+                ...state,
+                name : action.payload,
+            
+            }
+            break;
+        case 'setAge' :
+        state = {
+            ...state,
+            age : action.payload
+        }
+        
+        break;
+        
+    }
+    return state;
+}
+
+const store = createStore(combineReducers({UserReducer,EmployeeReducer}));
     store.subscribe(()=>{
         console.log('Update Result : ',store.getState())
     })
@@ -44,6 +71,10 @@ const store = createStore(reducer);
     store.dispatch({
         type:'SUBTRACT',
         payload:5000
+    })
+    store.dispatch({
+        type:'setAge',
+        payload:'eiei'
     })
  
 
